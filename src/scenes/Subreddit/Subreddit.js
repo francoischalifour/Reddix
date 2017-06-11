@@ -5,6 +5,7 @@ import MdBookmark from 'react-icons/lib/md/bookmark'
 import MdBookmarkOutline from 'react-icons/lib/md/bookmark-outline'
 import MdRefresh from 'react-icons/lib/md/refresh'
 import MdAdd from 'react-icons/lib/md/add'
+import { numberWithSeparator } from 'Util'
 import AppBar from 'Components/AppBar'
 import { Tabs, Tab, TabList, TabPanels } from 'Components/Tabs'
 import Fab from 'Components/Fab'
@@ -111,8 +112,8 @@ class Subreddit extends Component {
           <h1>{this.props.subreddit.title}</h1>
 
           <Overview>
-            <div><span>{this.props.subreddit.subscribers}</span> subscribers</div>
-            <div><span>{this.props.subreddit.active_user_count}</span> reading now</div>
+            <div><span>{numberWithSeparator(this.props.subreddit.subscribers)}</span> subscribers</div>
+            <div><span>{numberWithSeparator(this.props.subreddit.active_user_count)}</span> reading now</div>
           </Overview>
 
           <Actions>
