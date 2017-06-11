@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   const subscriptions = state.subscriptions
   const subreddit = state.subreddits.byId[sid]
 
-  const isSubscribed = subreddit && subscriptions.indexOf(subreddit.id) !== -1
+  const isSubscribed = subreddit && subscriptions.includes(subreddit.id)
 
   return { subreddit, isSubscribed }
 }

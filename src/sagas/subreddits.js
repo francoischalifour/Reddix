@@ -18,7 +18,7 @@ function * toggleSubscription () {
     const subreddit = yield select(state => state.subreddits.byId[id])
     const subscriptions = yield select(state => state.subscriptions)
 
-    const isSubscribed = subscriptions.indexOf(id) !== -1
+    const isSubscribed = subscriptions.includes(id)
 
     if (isSubscribed) {
       yield r.unsub(subreddit.name)
