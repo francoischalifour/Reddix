@@ -53,6 +53,7 @@
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.5",
+    "pre-commit": "^1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^1.0.1",
     "react-error-overlay": "^1.0.1",
@@ -70,8 +71,12 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "./node_modules/.bin/standard"
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
+  "pre-commit": [
+    "lint:fix"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
